@@ -1,0 +1,341 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,700");
+html, body {
+    box-sizing: border-box;
+    height: 100%;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+.container {
+    display: grid;
+    background: black;
+    height: 100%;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 50vh;
+    grid-auto-flow: dense;
+    grid-template-areas:
+        "h h h h h h g g g g w w"
+        "c c c c c c c m m m m m"
+        "c c c c c c c b b b b b";
+}
+
+.white {
+    grid-area: w;
+    background-color: white;
+}
+
+
+/* Page Title*/
+.page-title {
+    grid-area: m;
+    background-color: #04467f;
+    position: revert;
+}
+
+#title {
+    color: white;
+    margin-left: 10%;
+    font-size: 70px;
+    font-weight: 700;
+}
+
+/*Background*/
+.background {
+    grid-area: h;
+    background-color: #e74725;
+    z-index: 0;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.background:before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    background-color: black;
+    transition: opacity 200ms ease-in;
+    z-index: -1;
+}
+
+.background-title {
+    color: white;
+    padding-bottom: 15px;
+    padding-right: 25px;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.desc {
+    width: 85%;
+    height: 90%;
+    opacity: 0.01;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    margin-left: 50px;
+    color: white;
+}
+
+.background:hover:before,
+.background:focus:before,
+.desc:hover,
+.desc:focus{
+    opacity: 1;
+}
+
+/* Images Section */
+.img {
+    grid-area: g;
+    background-color: black;
+}
+
+/* Slide holder*/
+figure{
+    display: block;
+}
+
+#img-div {
+    width: 527px;
+    height: 355px;
+    position: absolute;
+    margin-top: 5px;
+    margin-left: 5px;
+    overflow: hidden;
+}
+
+/* Image */
+.slide {
+    position: absolute;
+    height: 100%;
+    margin: 6px 8px 8px 6px;
+    transition: 0.45s all cubic-bezier(0.65, 0.05, 0.36, 1);
+    -webkit-clip-path: inset(0 0 0 0);
+    clip-path: inset(0 0 0 0);
+}
+
+.slide img {
+    border-radius: 5px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: 83%;
+}
+.slide:before {
+    content: "";
+    position: absolute;
+    background: rgba(0, 0, 0, .125);
+}
+
+.slide.slide-on {
+    -webkit-clip-path: inset(0 100% 0 0);
+    clip-path: inset(0 100% 0 0);
+}
+
+/* Images Captures */
+.slide figcaption {
+    width: 100%;
+    position: absolute;
+    display: inline-flex;
+    margin: 9px 0 0 15px;
+}
+
+.slide .title {
+    font-size: 25px;
+    color: white;
+    transition: 0.3s all cubic-bezier(0.65, 0.05, 0.36, 1) 0.45s;
+    -webkit-clip-path: inset(0 0 0 100%);
+    clip-path: inset(0 0 0 100%);
+    font-weight: 700;
+    text-transform: uppercase;
+    position: relative;
+}
+.slide .author {
+    font-size: 12px;
+    color: white;
+    opacity: 0.8;
+    transition: 0.3s all cubic-bezier(0.65, 0.05, 0.36, 1) 0.45s;
+    -webkit-clip-path: inset(0 0 0 100%);
+    clip-path: inset(0 0 0 100%);
+    font-weight: 300;
+    letter-spacing: 2px;
+    position: relative;
+    z-index: 5;
+    top: 12px;
+    left: 7px;
+}
+
+.slide.text-on .title {
+    transition: 0.3s all cubic-bezier(0.65, 0.05, 0.36, 1) 0.45s;
+    -webkit-clip-path: inset(0 0 0 0);
+    clip-path: inset(0 0 0 0);
+}
+.slide.text-on .author {
+    transition: 0.3s all cubic-bezier(0.65, 0.05, 0.36, 1) 0.6s;
+    -webkit-clip-path: inset(0 0 0 0);
+    clip-path: inset(0 0 0 0);
+}
+
+
+/* Image Buttons */
+.slider-control{
+    position: relative;
+    margin: 315px 0 30px 455px;
+    width: 60px;
+    height: 30px;
+    overflow: hidden;
+    border-radius: 3px;
+    z-index: 3;
+}
+
+.slider-control .control {
+    width: 50%;
+    display: block;
+    float: left;
+    text-align: center;
+    line-height: 30px;
+    cursor: pointer;
+    transition: 0.3s all ease;
+    background: white;
+}
+.slider-control .control .icon {
+    pointer-events: none;
+    transition: 0.3s all ease;
+}
+.slider-control .control.disabled {
+    pointer-events: none;
+    background: #ddd;
+}
+.slider-control .control.disabled .icon {
+    opacity: 0.5;
+}
+
+@media (max-width: 460px) {
+    #img-div{
+        width: 60%;
+    }
+}
+
+/* Timeline*/
+.center {
+    grid-area: c;
+    background-color: #f5cf54;
+    z-index: 0;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.center:before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    background-color: black;
+    transition: opacity 200ms ease-in;
+    z-index: -1;
+}
+
+.center-title {
+    color: white;
+    padding-bottom: 15px;
+    padding-right: 25px;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.desc {
+    width: 85%;
+    height: 90%;
+    opacity: 0.01;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    margin-left: 50px;
+    color: white;
+}
+
+.center:hover:before,
+.center:focus:before,
+.desc:hover,
+.desc:focus{
+    opacity: 1;
+}
+
+
+/* Link */
+.link {
+    grid-area: b;
+    background-color: black;
+    z-index: 0;
+    position: relative;
+}
+.link:before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(45deg, #ed1385 0%, #d602f2 50%, #3700ff 100%);
+    transition: opacity 200ms ease-in;
+    z-index: -1;
+}
+.link:hover:before, .link:focus:before {
+    opacity: 1;
+}
+
+.listItemWhite {
+    padding: 15px;
+    list-style: none;
+    margin: 0;
+    font-weight: 500;
+    line-height: 1.25;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.listItemWhite a:link, .listItemWhite a:visited {
+    text-decoration: none;
+    color: white;
+    transition: all 500ms ease;
+    position: relative;
+}
+
+.listItemWhite a:link:after, .listItemWhite a:visited:after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    top: 27px;
+    right: 0;
+    width: 0;
+    height: 4px;
+    content: "";
+    color: transparent;
+    background: white;
+    transition: all 200ms ease-in;
+
+}
+
+.listItemWhite a:link:hover:after, .listItemWhite a:visited:hover:after {
+    width: 100%;
+    z-index: 0;
+    animation: fill 1s forwards;
+}
+
+span{
+    color: white;
+}
+
+li{
+    color: white;
+    font-size: 15px;
+}

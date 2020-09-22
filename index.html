@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Anh Nguyen | Mondrian Page</title>
+	<meta name="author" content="Anh Nguyen">
+	<link rel="icon" href="statics/favicon.ico"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<meta
+			name="description"
+			content="FCC Web Design Project"
+	/>
+	<link rel="apple-touch-icon" href="statics/logo192.png"/>
+	<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"/>
+	<link rel="stylesheet" href="page.css"/>
+</head>
+<body>
+<main id="main">
+	<div class="container">
+		<!--	Title	-->
+		<div class="page-title">
+			<h1 id="title">
+				Piet<br>
+				Mondrian</h1>
+		</div>
+		<!--	Background	-->
+		<div class="background" id="tribute-info">
+			<div class="desc">
+				<p><strong>Birth name:</strong> Pieter Cornelis Mondriaan (Dutch: [ˈpitər ˈmɔndrijaːn])<br>
+					<br>
+					<strong>Known-as:</strong> Piet Mondrian (Dutch: [pit ˈmɔndrijɑn])<br>
+					<br>
+					<strong>Date:</strong> 7 March 1872 – 1 February 1944)<br>
+					<br>
+					>> Dutch painter and theoretician who is regarded as one of the greatest artists of the 20th
+					century. He is known for being one of the pioneers of 20th-century abstract art, as he changed his artistic direction from figurative painting to an increasingly abstract style, until he reached a point where his artistic vocabulary was reduced to simple geometric elements.</p>
+			</div>
+			<div class="background-title">Background</div>
+		</div>
+
+		<!--	Images	-->
+		<div class="img" >
+			<figure id="img-div">
+
+				<!--		1942-1943		-->
+				<figure class="slide">
+					<img src="https://learnodo-newtonic.com/wp-content/uploads/2016/09/Broadway-Boogie-Woogie-1943-Piet-Mondrian.webp" alt="BROADWAY BOOGIE WOOGIE" id="image"/>
+					<figcaption id="img-caption">
+						<div class="title">BROADWAY BOOGIE WOOGIE</div>
+						<div class="author">_ 1942-1943</div>
+					</figcaption>
+				</figure>
+
+				<!--		1923		-->
+				<figure class="slide"><img src="https://i0.wp.com/artlistr.com/wp-content/uploads/2018/01/Piet-Mondrian-Composition-A-La-Galleria-Nazionale-Rome-Italy-1923.jpg?resize=768%2C762&ssl=1" alt="Composition A"/>
+					<figcaption >
+						<div class="title">Composition A</div>
+						<div class="author">_ 1923</div>
+					</figcaption>
+				</figure>
+
+				<!--		1921		-->
+				<figure class="slide"><img src="https://i2.wp.com/artlistr.com/wp-content/uploads/2018/01/Piet-Mondrian-Tableau-I-1921.jpg?resize=768%2C822&ssl=1" alt="Composition A"/>
+					<figcaption >
+						<div class="title">Tableau I</div>
+						<div class="author">_ 1921</div>
+					</figcaption>
+				</figure>
+
+				<!--		1915		-->
+				<figure class="slide"><img src="https://learnodo-newtonic.com/wp-content/uploads/2016/09/Composition-No.-10-Pier-and-Ocean-1915-Piet-Mondrian.webp" alt="Composition No. 10"/>
+					<figcaption >
+						<div class="title">Composition No. 10</div>
+						<div class="author">_ 1915</div>
+					</figcaption>
+				</figure>
+
+				<!--		1910		-->
+				<figure class="slide"><img src="https://learnodo-newtonic.com/wp-content/uploads/2016/09/The-Red-Tree-1910-Piet-Mondrian.webp" alt="The Red Tree"/>
+					<figcaption >
+						<div class="title">The Red Tree</div>
+						<div class="author">_ 1910</div>
+					</figcaption>
+				</figure>
+
+				<!--	Slide Buttons		-->
+				<div class="slider-control">
+					<div class="control prev disabled">
+						<div class="icon ion-chevron-left">
+						</div>
+					</div>
+					<div class="control next">
+						<div class="icon ion-chevron-right"></div>
+					</div>
+				</div>
+			</figure>
+		</div>
+
+	<div class="center">
+		<div class="desc">
+		<p>
+			<strong>1892</strong>- Mondrian entered the Academy for Fine Art in Amsterdam, already qualified as a teacher.<br>
+			<br>
+			<strong>1911</strong>- Mondrian moved to Paris and changed his name (dropping an 'a' from Mondriaan) to emphasize his departure from the Netherlands.<br>
+			<br>
+			<strong>1915</strong>-  Mondrian, Van Doesburg, and together with related artists Bart van der Leck, Anthony Kok, Vilmos Huszar and J.J.P. Oud, they founded the magazine De Stijl in 1917.<br>
+			<br>
+			<strong>1919 - 1938</strong>-  Mondrian returned to France and worked exclusively with vertical and horizontal lines and with white, black, and the three primary colors—the strongest and purest possible contrasts.<br>
+			<br>
+		</p>
+	</div>
+		<div class="center-title">Timeline</div>
+	</div>
+
+	<div class="white"></div>
+	<div class="link">
+		<li class="listItemWhite">
+			For more information =>
+			<a href="https://www.guggenheim.org/artwork/artist/piet-mondrian" target="_blank" id="tribute-link">Artworks
+			</a>
+			<span> | </span>
+			<a href="https://worldhistoryproject.org/topics/piet-mondrian" target="_blank"
+			   id="tribute-timeline">Timeline
+			</a>
+		</li>
+	</div>
+
+	<!--	container-->
+	</div>
+</main>
+</body>
+<script>
+    // buttons
+    const sliderControl = document.querySelector(".slider-control");
+
+    // slides informations
+    const slides = document.querySelectorAll(".slide"),
+        slidesLength = slides.length;
+
+    // slides array
+    let slidesArr = [].slice.call(slides);
+
+    // reverse array sorting
+    slidesArr = slidesArr.reverse();
+
+    // slide current
+    let slideCurrent = 0;
+
+    sliderControl.addEventListener("click", function (e) {
+        target = e.target;
+
+        // get next button
+        if (target.classList.contains("next")) {
+
+            next = e.target,
+                prev = next.previousElementSibling,
+                nextSlide = slidesArr[slideCurrent + 1],
+                slide = slidesArr[slideCurrent];
+
+            slide.classList.add("slide-on");
+            slide.classList.remove("text-on");
+            nextSlide.classList.add("text-on");
+
+            slideCurrent += 1;
+
+            if (slideCurrent > 0) {
+                prev.classList.remove("disabled");
+            }
+
+            if (slideCurrent === slidesLength - 1) {
+                next.classList.add("disabled");
+            }
+        }
+
+        // get prev button
+        if (target.classList.contains("prev")) {
+
+            slideCurrent -= 1;
+
+            prev = e.target,
+                next = prev.nextElementSibling,
+                prevSlide = slidesArr[slideCurrent + 1],
+                slide = slidesArr[slideCurrent];
+
+            prevSlide.classList.remove("text-on");
+            slide.classList.remove("slide-on");
+            slide.classList.add("text-on");
+
+            if (slideCurrent === slidesLength - 2) {
+                next.classList.remove("disabled");
+            }
+
+            if (slideCurrent === 0) {
+                prev.classList.add("disabled");
+            }
+
+        }
+
+    });
+</script>
+</html>
