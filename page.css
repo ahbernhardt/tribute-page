@@ -276,6 +276,7 @@ figure{
     background-color: black;
     z-index: 0;
     position: relative;
+    color: white;
 }
 .link:before {
     content: '';
@@ -301,35 +302,45 @@ figure{
     line-height: 1.25;
     font-size: 15px;
     cursor: pointer;
+    color: white;
 }
 
-.listItemWhite a:link, .listItemWhite a:visited {
+.listItemWhite a:link, .listItemWhite a:visited .listItemWhite i:link, .listItemWhite i:visited{
     text-decoration: none;
     color: white;
     transition: all 500ms ease;
     position: relative;
 }
 
-.listItemWhite a:link:after, .listItemWhite a:visited:after {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    top: 27px;
-    right: 0;
-    width: 0;
-    height: 4px;
-    content: "";
-    color: transparent;
-    background: white;
-    transition: all 200ms ease-in;
+/*.listItemWhite a:link:after, .listItemWhite a:visited:after .listItemWhite i:link:after, .listItemWhite i:visited:after{*/
+/*    position: absolute;*/
+/*    bottom: 0;*/
+/*    left: 0;*/
+/*    top: 27px;*/
+/*    right: 0;*/
+/*    width: 0;*/
+/*    height: 4px;*/
+/*    content: "";*/
+/*    color: transparent;*/
+/*    background: white;*/
+/*    transition: all 200ms ease-in;*/
 
-}
+/*}*/
 
-.listItemWhite a:link:hover:after, .listItemWhite a:visited:hover:after {
+.listItemWhite a:link:hover, .listItemWhite a:visited:hover .listItemWhite i:link:hover, .listItemWhite i:visited:hover {
     width: 100%;
     z-index: 0;
+    color: black;
     animation: fill 1s forwards;
 }
+#tribute-timeline, #tribute-link, #github-link{
+    color: white;
+}
+
+#tribute-timeline:hover, #tribute-link:hover, #github-link:hover{
+    color: black;
+}
+
 
 span{
     color: white;
