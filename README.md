@@ -2,7 +2,7 @@
 
 > Build a Tribute Page. This is the first project of [FreeCodeCamp Responsive Web Design Certification](https://www.freecodecamp.org/learn/responsive-web-design/responsive-web-design-projects/build-a-tribute-page)
 
-Check for [Live Demo](https://anguyen0208.github.io/tribute-page)
+Check for [Live Demo](https://ahbernhardt.github.io/tribute-page)
 
 ## Screenshot
 
